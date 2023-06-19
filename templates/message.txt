@@ -1,0 +1,14 @@
+{# templates/message.txt #}
+
+
+Hello {{ name }}
+
+{% if score > 80%}
+I'm happy to inform you that you did very well on todays {{test_name}}.
+{%else%}
+I am sorry to inform you that you did not do very well on todays {{test_name}}.
+{%endif%}
+You reached {{score}} out of {{max_score}} points. 
+See you tomorrow!
+
+Omer

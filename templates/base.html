@@ -1,0 +1,22 @@
+
+{# templates/base.html #}
+{% import "macros.html" as macros %}
+<!DOCTYPE>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{title}}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        {% include "_navigation.html"%}
+    </header>
+    {% block content %}
+    <h1>Welcome to Norway</h1>
+    <h1>Welcome to {{ title }}!</h2>
+    {% endblock content %}
+    <footer>
+        <h1>{{macros.light_or_dark_mode("body")}}</h1>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{# templates/results.html #}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{test_name}} {{title}}</h1>
+<ul>
+{% for student in students|sort(attribute="score", reverse = true)
+    |sort(attribute="name", reverse=false) %}
+    <li>
+    {{ macros.add_badge(student, students) }}
+    <em> {{student.name}}: your score is </em> {{student.score}}/{{max_score}}
+    </li>
+{%endfor%}
+</ul>
+{% endblock content %}
+
+
